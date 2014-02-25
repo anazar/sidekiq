@@ -155,7 +155,7 @@ module Sidekiq
         retry_count += 1
         if retry_count <= max_retries
           Sidekiq.logger.debug {"Suppressing and retrying error: #{e.inspect}"}
-          sleep(1)
+          #sleep(1)
           retry
         else
           Sidekiq.logger.info {"Exhausted #{max_retries} retries due to Redis timeouts: #{e.inspect}"}
